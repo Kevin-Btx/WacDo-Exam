@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wacdo - Ma commande</title>
+  <meta name="description"
+    content="Composez votre commande Wacdo : menus, sandwiches, boissons, desserts et plus encore." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="commande-layout">
+    <header class="entete">
+      <img src="images/images/logo.png" alt="Logo Wacdo" class="entete__logo" />
+      <h1>Ma commande</h1>
+    </header>
+
+    <div class="contenu-principal">
+      <div class="zone-principale">
+        <nav class="nav-categories" aria-label="Catégories de produits">
+          <button type="button" class="nav-fleche" id="fleche-gauche"
+            aria-label="Catégories précédentes">&#10094;</button>
+          <ul class="nav-categories__liste" id="liste-categories">
+          </ul>
+          <button type="button" class="nav-fleche" id="fleche-droite"
+            aria-label="Catégories suivantes">&#10095;</button>
+        </nav>
+
+        <section class="zone-produits" aria-live="polite">
+          <div class="zone-produits__intro">
+            <h2 id="titre-categorie">Chargement...</h2>
+            <p id="soustitre-categorie"></p>
+          </div>
+          <ul class="grille-produits" id="grille-produits">
+          </ul>
+        </section>
+      </div>
+
+      <aside class="panier" aria-label="Votre panier">
+        <img src="images/images/logo.png" alt="" class="panier__logo" />
+        <p class="panier__numero">
+          Commande numéro
+          <strong id="panier-numero">--</strong>
+        </p>
+        <ul class="panier__liste" id="panier-liste">
+        </ul>
+        <p class="panier__vide" id="panier-vide">Votre panier est vide pour le moment.</p>
+
+        <div class="panier__total">
+          <span>TOTAL (ttc)</span>
+          <strong id="panier-total">0,00 €</strong>
+        </div>
+        <div class="panier__actions">
+          <button type="button" class="btn btn-contour" id="btn-abandon">Abandon</button>
+          <button type="button" class="btn btn-jaune" id="btn-payer">Payer</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="modale-fond" id="modale-simple" hidden>
+    <div class="modale" role="dialog" aria-modal="true" aria-labelledby="modale-simple-titre">
+      <button type="button" class="modale__fermer" id="modale-simple-fermer" aria-label="Fermer">&#10005;</button>
+      <h2 id="modale-simple-titre"></h2>
+      <p id="modale-simple-texte"></p>
+
+      <div class="modale__options" id="modale-simple-tailles" hidden>
+      </div>
+
+      <div class="modale__quantite">
+        <button type="button" class="qte-btn" id="modale-simple-moins" aria-label="Diminuer la quantité">-</button>
+        <span class="qte-valeur" id="modale-simple-qte">1</span>
+        <button type="button" class="qte-btn" id="modale-simple-plus" aria-label="Augmenter la quantité">+</button>
+      </div>
+
+      <div class="modale__pied">
+        <button type="button" class="btn btn-contour" id="modale-simple-annuler">Annuler</button>
+        <button type="button" class="btn btn-jaune" id="modale-simple-ajouter">Ajouter à ma commande</button>
+      </div>
+    </div>
+  </div>
+  <div class="modale-fond" id="modale-menu" hidden>
+    <div class="modale" role="dialog" aria-modal="true" aria-labelledby="modale-menu-titre">
+      <button type="button" class="modale__retour btn btn-contour" id="modale-menu-retour" hidden>Retour</button>
+      <button type="button" class="modale__fermer" id="modale-menu-fermer" aria-label="Fermer">&#10005;</button>
+      <h2 id="modale-menu-titre"></h2>
+      <p id="modale-menu-texte"></p>
+
+      <div class="modale__options" id="modale-menu-options">
+      </div>
+
+      <div class="modale__pied">
+        <button type="button" class="btn btn-jaune" id="modale-menu-suivant">Étape Suivante</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/panier.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
